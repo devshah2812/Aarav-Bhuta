@@ -781,14 +781,16 @@ footer {
 }
 .modal.open { display: flex; }
 
-.modal-box {
+..modal-box {
   position: relative;
   background: var(--bg-3);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
   width: 100%;
-  max-width: 900px;
+  max-width: 95vw;
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
   animation: modalIn .3s ease;
 }
 @keyframes modalIn {
@@ -820,8 +822,11 @@ footer {
 }
 #modal-video {
   width: 100%;
+  max-height: calc(100vh - 160px);
+  height: auto;
   border-radius: 8px;
   outline: none;
+  object-fit: contain;
 }
 
 /* ════════════ RESPONSIVE ════════════════════ */
@@ -838,11 +843,11 @@ footer {
   }
   .modal-box {
     max-width: 95vw;
+    max-height: calc(100vh - 32px);
     padding: 16px;
   }
   #modal-video {
-    max-height: 60vh;
-    object-fit: contain;
+    max-height: calc(100vh - 140px);
   }
 }
 

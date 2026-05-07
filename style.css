@@ -880,12 +880,6 @@ footer {
 
   .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
 
-  /* Tablet slideshow fixes */
-  .slides img {
-    width: 350px !important;
-    height: 250px !important;
-  }
-
   /* Tablet modal fixes */
   .modal-box {
     max-width: 90vw;
@@ -900,12 +894,6 @@ footer {
   .profile-attrs { grid-template-columns: 1fr; }
   .hero-cta { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
-
-  /* Mobile slideshow fixes */
-  .slides img {
-    width: 280px !important;
-    height: 200px !important;
-  }
 
   /* Mobile modal fixes */
   .modal {
@@ -937,6 +925,7 @@ footer {
       height: 300px;
       object-fit: cover;
       border-radius: 12px;
+      flex-shrink: 0; /* Prevent images from shrinking */
     }
 
  @keyframes slideRightToLeft {
@@ -947,3 +936,32 @@ footer {
         transform: translateX(-50%);
       }
     }
+
+/* Mobile slideshow fixes */
+@media (max-width: 760px) {
+  .slideshow {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slides {
+    animation: none; /* Disable animation on mobile */
+    min-width: unset;
+    width: max-content;
+    padding: 0 20px;
+  }
+
+  .slides img {
+    width: 350px !important;
+    height: 250px !important;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .slides img {
+    width: 280px !important;
+    height: 200px !important;
+  }
+}

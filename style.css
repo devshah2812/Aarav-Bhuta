@@ -541,9 +541,19 @@ img, video { display: block; max-width: 100%; }
   color: var(--text);
   margin-bottom: 4px;
 }
-.tl-content p {
+.tl-content p,
+.tl-content ul {
   font-size: .87rem;
   color: var(--text-muted);
+  line-height: 1.7;
+}
+.tl-content ul {
+  list-style: disc;
+  margin: 10px 0 0 18px;
+  padding-left: 0;
+}
+.tl-content ul li {
+  margin-bottom: 8px;
 }
 
 /* Education card */
